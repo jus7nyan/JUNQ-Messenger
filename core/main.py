@@ -33,7 +33,7 @@ class Messenger:
                         print("Wrong config file")
                 else:
                     print(f"no access to file {self.args.config}")
-                    exit(1)
+                    
 
             else:
                 answr = input(f"Are you want to use default config (Y/n): ")
@@ -41,6 +41,7 @@ class Messenger:
                     return consts.DEFAULT_CONFIG
                 else:
                     print("You need config file to run this program")
+                    exit(1)
 
 
     def __run__(self):
