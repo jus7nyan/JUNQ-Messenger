@@ -1,0 +1,20 @@
+#! /usr/bin/python3
+import argparse
+
+def main(args):
+    import core.main as core
+    msgr = core.Messenger("JMessenger",args)
+    ...
+
+def aparse():
+    parser = argparse.ArgumentParser()
+    
+    parser.add_argument("-c", "--config", nargs=1, default="/etc/jmessenger.json", help="config file path")
+    parser.add_argument("-m", "--mode", choices=["t","g","s"], default="t", help="select app mode (tui, gui, server)")
+
+    args = parser.parse_args()
+    return args
+
+if __name__ == "__main__":
+    args = aparse()
+    main(args)
